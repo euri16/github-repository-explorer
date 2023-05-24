@@ -51,6 +51,10 @@ This modularization benefits the team in several ways:
 - Any changes to the project are encapsulated to its own module, reducing the risk of regressions
 - The relationship between layers and modules is clear
 
+### Overview (Diagram)
+
+![Architecture Diagram](https://github.com/euri16/github-repository-explorer/blob/main/arch_diagram.png)
+
 ## Testing
 
 The GitHub Repository Explorer has been thoroughly tested with the following libraries:
