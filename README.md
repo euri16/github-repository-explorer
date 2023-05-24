@@ -2,6 +2,11 @@
 
 The GitHub Repository Explorer is an Android application that displays a list of GitHub repositories. Upon selecting a repository from the list, detailed information about the repository is displayed, including the name, description, the number of stars, the number of forks, and the primary language used in the repository.
 
+<div>
+    <img src="https://github.com/euri16/github-repository-explorer/blob/main/screenshots/sololearn_screenshot1.png" alt="Screenshot 1" width="400" />
+    <img src="https://github.com/euri16/github-repository-explorer/blob/main/screenshots/sololearn_screenshot2.png" alt="Screenshot 2" width="400" />
+</div>
+
 ## Table of Contents
 
 - [Features](#features)

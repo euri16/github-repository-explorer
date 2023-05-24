@@ -13,8 +13,8 @@ class GithubReposLoadStateViewHolder(
     fun bind(loadState: LoadState, itemCount: Int) {
         with(binding) {
             val isLoading =  loadState is LoadState.Loading
-            progress.isVisible = isLoading && itemCount > 1
-            container.isVisible = isLoading && itemCount > 1
+            progress.isVisible = isLoading
+            container.isVisible = isLoading
         }
     }
 }
