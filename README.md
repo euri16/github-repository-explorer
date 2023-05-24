@@ -84,6 +84,6 @@ This project is licensed under the MIT License. See `LICENSE` file for more info
 
 ## Contact
 
-Your Name - [@_euryperez](https://twitter.com/_euryperez)
+Eury Pérez - [@_euryperez](https://twitter.com/_euryperez)
 
 Project Link: [https://github.com/euri16/github-repository-explorer](https://github.com/euri16/github-repository-explorer)
