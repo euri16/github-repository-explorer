@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id "com.google.dagger.hilt.android"
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'dev.eury.core.network'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            buildConfigField "String", "API_BASE_URL", "\"https://api.github.com/\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "String", "API_BASE_URL", "\"https://api.github.com/\""
+            buildConfigField "String", "API_VERSION", "\"2022-11-28\""
+            buildConfigField "String", "API_AUTH_TOKEN", "\"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\""
+        }
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.sourceCompatibility
+        targetCompatibility rootProject.ext.targetCompatibility
+    }
+    kotlinOptions {
+        jvmTarget = rootProject.ext.kotlinOptionsJVMTarget
+    }
+    kotlin {
+        jvmToolchain(rootProject.ext.kotlinJVMToolchain)
+    }
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+dependencies {
+    implementation libs.moshi.kotlin
+    implementation libs.moshi.retrofitConverter
+    implementation libs.retrofit
+    implementation libs.okhttp.retrofitLogging
+    implementation libs.okhttp.core
+
+    //di
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
+    kaptAndroidTest libs.hilt.compiler
+}

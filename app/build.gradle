@@ -1,0 +1,74 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'androidx.navigation.safeargs'
+    id "com.google.dagger.hilt.android"
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'dev.eury.app.sololearn'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "dev.eury.app.sololearn"
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.sourceCompatibility
+        targetCompatibility rootProject.ext.targetCompatibility
+    }
+    kotlinOptions {
+        jvmTarget = rootProject.ext.kotlinOptionsJVMTarget
+    }
+    kotlin {
+        jvmToolchain(rootProject.ext.kotlinJVMToolchain)
+    }
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(18)
+        }
+    }
+    buildFeatures {
+        buildConfig true
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':features:github-repo-list')
+    implementation project(":features:repo-detail")
+    implementation project(":core:ui-common")
+
+    implementation libs.androidx.splashScreen
+
+    implementation libs.androidx.navigation.fragmentKtx
+    implementation libs.androidx.navigation.uiKtx
+
+    //di
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
+    kaptAndroidTest libs.hilt.compiler
+
+    implementation libs.timber
+}

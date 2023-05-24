@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/repo_item_bg_with_ripple"
+    android:paddingHorizontal="15dp"
+    android:paddingVertical="25dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_book"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_book"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:tint="@color/gray" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/accent"
+        android:textSize="16sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_book"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="fineanmol/Hacktoberfest2022" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:lineHeight="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        tools:text="Make your first Pull Request on Hacktoberfest 2022. Don't forget to spread love and if you like give us a ⭐️Make your first Pull Request on Hacktoberfest 2022. Don't forget to spread love and if you like give us a" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_topics"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal"
+        app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_description"
+        app:layout_constraintTop_toBottomOf="@id/tv_description"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_github_repo_topic" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_star"
+        android:layout_width="@dimen/icons_size"
+        android:layout_height="@dimen/icons_size"
+        android:src="@drawable/ic_star"
+        android:tint="@color/gray"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/rv_topics"
+        app:layout_constraintStart_toStartOf="@id/rv_topics" />
+
+    <TextView
+        android:id="@+id/tv_stars_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:layout_marginStart="6dp"
+        android:textSize="13sp"
+        app:layout_constraintTop_toTopOf="@id/iv_star"
+        app:layout_constraintBottom_toBottomOf="@id/iv_star"
+        app:layout_constraintStart_toEndOf="@id/iv_star"
+        tools:text="1.3k" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_language"
+        android:layout_width="@dimen/icons_size"
+        android:layout_height="@dimen/icons_size"
+        android:src="@drawable/ic_code"
+        android:tint="@color/gray"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="@id/iv_star"
+        app:layout_constraintStart_toEndOf="@id/tv_stars_count" />
+
+    <TextView
+        android:id="@+id/tv_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:layout_marginStart="6dp"
+        android:textSize="13sp"
+        app:layout_constraintTop_toTopOf="@id/iv_language"
+        app:layout_constraintBottom_toBottomOf="@id/iv_language"
+        app:layout_constraintStart_toEndOf="@id/iv_language"
+        tools:text="Kotlin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

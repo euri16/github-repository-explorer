@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="rounded_chip_textsize">13sp</dimen>
+    <dimen name="progress_spinner_size">50dp</dimen>
+    <dimen name="icons_size">15dp</dimen>
+</resources>

@@ -1,0 +1,36 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+plugins {
+
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.4.0'
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+    versionCatalogs {
+        create("libs") {
+            from(files("gradle/libraries.versions.toml"))
+        }
+    }
+}
+
+rootProject.name = "SoloLearn Test"
+include ':app'
+include ':core:network'
+include ':core:data'
+include ':core:models'
+include ':core:database'
+include ':core:domain'
+include ':features:github-repo-list'
+include ':core:utils'
+include ':core:ui-common'
+include ':features:repo-detail'
+include ':core:testing'

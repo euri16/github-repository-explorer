@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id "com.google.dagger.hilt.android"
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'dev.eury.features.githubReposList'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.sourceCompatibility
+        targetCompatibility rootProject.ext.targetCompatibility
+    }
+    kotlinOptions {
+        jvmTarget = rootProject.ext.kotlinOptionsJVMTarget
+    }
+    kotlin {
+        jvmToolchain(rootProject.ext.kotlinJVMToolchain)
+    }
+}
+
+dependencies {
+    implementation project(":core:data")
+    implementation project(":core:domain")
+    implementation project(":core:ui-common")
+    implementation project(":core:models")
+    implementation project(":core:utils")
+
+    implementation libs.androidx.paging
+    implementation libs.androidx.paging.commonKtx
+    implementation libs.androidx.appCompat
+    implementation libs.androidx.fragmentKtx
+    implementation libs.androidx.lifecycle.viewModelKtx
+    implementation libs.androidx.constraintLayout
+    implementation libs.androidx.recyclerView
+    implementation libs.google.flexbox
+
+    // navigation
+    implementation libs.androidx.navigation.fragmentKtx
+    implementation libs.androidx.navigation.uiKtx
+
+    //di
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
+    kaptAndroidTest libs.hilt.compiler
+
+    // test
+    testImplementation project(":core:testing")
+    testImplementation project(":core:database")
+    testImplementation project(":core:network")
+    testImplementation(libs.bundles.roomRuntime)
+}

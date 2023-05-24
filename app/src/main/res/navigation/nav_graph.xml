@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/githubRepoListFragment">
+
+    <fragment
+        android:id="@+id/githubRepoListFragment"
+        android:name="dev.eury.features.github_repos_list.GithubRepoListFragment"
+        android:label="GithubRepoListFragment" >
+        <action
+            android:id="@+id/to_repositoryDetailFragment"
+            app:destination="@id/repositoryDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/repositoryDetailFragment"
+        android:name="dev.eury.features.repo_detail.RepositoryDetailFragment"
+        android:label="RepositoryDetailFragment" />
+</navigation>

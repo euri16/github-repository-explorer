@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_opening_url">Whoops! We couldn\'t open the website, verify there\'s a browser installed and try again.</string>
+    <string name="owner_title">Owner</string>
+</resources>

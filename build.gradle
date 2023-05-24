@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath libs.android.gradlePlugin
+        classpath libs.kotlin.gradlePlugin
+        classpath libs.androidx.navigation.safeArgsGradlePlugin
+    }
+}
+plugins {
+    alias libs.plugins.org.jetbrains.kotlin.android apply false
+    alias libs.plugins.org.jetbrains.kotlin.plugin.parcelize apply false
+    alias libs.plugins.com.google.dagger.hilt.android apply false
+}
+
+ext {
+    compileSdkVersion = 33
+    targetSdkVersion = 33
+    minSdkVersion = 21
+    compileSdk = 33
+
+    sourceCompatibility = JavaVersion.VERSION_18
+    targetCompatibility = JavaVersion.VERSION_18
+
+    kotlinOptionsJVMTarget = "18"
+    kotlinJVMToolchain = 18
+}
