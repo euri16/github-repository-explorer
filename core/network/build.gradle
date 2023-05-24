@@ -26,7 +26,7 @@ android {
         debug {
             buildConfigField "String", "API_BASE_URL", "\"https://api.github.com/\""
             buildConfigField "String", "API_VERSION", "\"2022-11-28\""
-            buildConfigField "String", "API_AUTH_TOKEN", "\"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\""
+            buildConfigField "String", "API_AUTH_TOKEN", "\"{PLACE THE TOKEN HERE}\""
         }
     }
     compileOptions {
